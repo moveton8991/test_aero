@@ -23,7 +23,7 @@ def get_airflow_connection(airflow_conn_id):
 
     return connection
 
-@dag(schedule=None, start_date=dt(2022, 2, 18), catchup=False)
+@dag(schedule='0 */12 * * *', start_date=dt(2022, 2, 18), catchup=False)
 def test_aero():
 
     @task()
